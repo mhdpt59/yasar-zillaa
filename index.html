@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>Yasar &amp; Zillaa — Wedding Invitation</title>
+
+    <!-- WhatsApp & Social Media Preview Cards -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="✨ Wedding Invitation | Yasar &amp; Zillaa" />
+    <meta property="og:description" content="Arshul Ahmed SV &amp; Rasheeda KV cordially invite your esteemed presence with family to celebrate the wedding of Yasar &amp; Zillaa on Saturday, 14 November 2026 at New Castle Auditorium." />
+    <meta property="og:image" content="assets/images/reference-envelope.jpg" />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="1920" />
+    <meta name="theme-color" content="#f7f1e6" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Marcellus&family=Great+Vibes&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="scroll-locked">
+    <!-- Background Audio Element -->
+    <audio id="bg-music" src="assets/music/wedding-song.mp3" loop preload="auto"></audio>
+
+    <!-- Ambient Texture -->
+    <div class="bg-vein"></div>
+
+    <div class="stage">
+      <!-- =====================================================================
+           1. ENVELOPE OPENING SCENE (LOTTIE ANIMATION)
+           ===================================================================== -->
+      <div class="envelope-scene" id="envelopeScene" title="Click to Open Invitation">
+        <div id="envelope-lottie"></div>
+        <div class="envelope-prompt" id="envelopePrompt">
+          <span>✦ Tap to Open Invitation ✦</span>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           2. FULL INVITATION CARD
+           ===================================================================== -->
+      <div class="invitation-wrap" id="invitationWrap">
+        <div class="card">
+          <!-- 4 Ornate Gold Corner Brackets -->
+          <span class="corner tl"></span>
+          <span class="corner tr"></span>
+          <span class="corner bl"></span>
+          <span class="corner br"></span>
+
+          <!-- Islamic Blessing -->
+          <div class="bismillah-block">
+            <div class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+            In the name of Allah,<br />the most Gracious, the most Merciful
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Parents / Hosts Header -->
+          <div class="parents" id="hostParents">
+            Arshul Ahmed SV <span class="amp">&amp;</span> Rasheeda KV
+          </div>
+
+          <!-- Invitation Sentence -->
+          <div class="invite-line">
+            Cordially invite your esteemed presence with family on the
+            auspicious occasion of the marriage of our son
+          </div>
+
+          <!-- The Couple -->
+          <div class="couple">
+            <!-- Groom -->
+            <div class="person">
+              <div class="person-name" id="groomName">Yasar</div>
+              <div class="person-rel" id="groomRel">
+                S/o Arshul Ahmed SV <span class="amp">&amp;</span> Rasheeda KV
+              </div>
+            </div>
+
+            <!-- Botanical Leaf Separator -->
+            <div class="couple-sep">
+              <svg
+                class="leaf"
+                viewBox="0 0 26 52"
+                fill="none"
+                stroke="#b6903f"
+                stroke-width="1.2"
+              >
+                <path d="M13 2v48" />
+                <path d="M13 12c6 0 8 4 8 8s-4 6-8 4" />
+                <path d="M13 28c-6 0-8 4-8 8s4 6 8 4" />
+              </svg>
+            </div>
+
+            <!-- Bride -->
+            <div class="person">
+              <div class="person-name" id="brideName">Zillaa</div>
+              <div class="person-rel" id="brideRel">
+                D/o Fasal Rahman <span class="amp">&amp;</span> Mareena
+              </div>
+            </div>
+          </div>
+
+          <!-- Split Details: Date & Reception Timings -->
+          <div class="details">
+            <div class="detail-col">
+              <div class="detail-label" id="eventDayOfWeek">Saturday</div>
+              <div class="detail-main" id="eventDay">14</div>
+              <div class="detail-sub" id="eventMonthYear">Nov 2026</div>
+            </div>
+            <div class="detail-divider"></div>
+            <div class="detail-col">
+              <div class="detail-label">Reception</div>
+              <div class="detail-main" style="font-size: 21px;">1:00 PM <span style="font-size: 15px; color: var(--gold);">&amp;</span> 2:00 PM</div>
+              <div class="detail-sub">Gents 1:00 PM · Ladies 2:00 PM</div>
+            </div>
+          </div>
+
+          <!-- Venue Section -->
+          <div class="venue-block">
+            <div class="pin-icon">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <path
+                  d="M12 22s7-7.4 7-12.5A7 7 0 0 0 5 9.5C5 14.6 12 22 12 22z"
+                />
+                <circle cx="12" cy="9.5" r="2.4" />
+              </svg>
+            </div>
+            <div class="venue-label">Venue</div>
+            <div class="venue-name" id="venueName">
+              New Castle Auditorrium
+            </div>
+
+            <!-- Action Buttons: Map, Calendar, WhatsApp Share -->
+            <div class="action-buttons-wrap">
+              <a
+                class="map-btn"
+                id="venueMapLink"
+                href="https://maps.app.goo.gl/fHWVf5iQmfUE1r3EA"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>View on map</span>
+              </a>
+
+              <button class="action-btn" id="addToCalBtn" type="button">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>Add to Calendar</span>
+              </button>
+
+              <button class="action-btn" id="shareWaBtn" type="button">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.031 2C6.5 2 2 6.477 2 12c0 1.99.585 3.844 1.597 5.409L2.062 22l4.757-1.492C8.307 21.468 10.111 22 12.031 22c5.532 0 10.031-4.477 10.031-10s-4.5-10-10.031-10zm0 18.25c-1.685 0-3.277-.487-4.63-1.326l-.332-.205-2.825.886.9-2.732-.224-.356C4.015 15.08 3.531 13.58 3.531 12c0-4.687 3.813-8.5 8.5-8.5s8.5 3.813 8.5 8.5-3.813 8.5-8.5 8.5zm4.67-6.377c-.256-.128-1.514-.748-1.748-.834-.235-.085-.406-.128-.577.128-.17.256-.662.834-.812 1.005-.15.17-.3.192-.556.064-.256-.128-1.082-.399-2.06-1.272-.763-.68-1.278-1.52-1.428-1.777-.15-.256-.016-.395.112-.522.115-.114.256-.299.384-.448.128-.15.171-.256.257-.427.085-.17.042-.32-.022-.448-.064-.128-.577-1.39-.79-1.902-.207-.5-.418-.432-.577-.44l-.491-.009c-.17 0-.448.064-.683.32-.235.256-.897.876-.897 2.137s.918 2.479 1.046 2.65c.128.17 1.808 2.76 4.38 3.87 2.573 1.11 2.573.74 3.033.7c.46-.04 1.514-.62 1.728-1.22.213-.6.213-1.11.15-1.22-.064-.11-.235-.17-.491-.298z"/>
+                </svg>
+                <span>Share Invitation</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Countdown Timer -->
+          <div class="countdown" id="countdown">
+            <div class="cd-unit">
+              <div class="cd-num" id="cd-days">–</div>
+              <div class="cd-label">Days</div>
+            </div>
+            <div class="cd-unit">
+              <div class="cd-num" id="cd-hours">–</div>
+              <div class="cd-label">Hrs</div>
+            </div>
+            <div class="cd-unit">
+              <div class="cd-num" id="cd-mins">–</div>
+              <div class="cd-label">Min</div>
+            </div>
+            <div class="cd-unit">
+              <div class="cd-num" id="cd-secs">–</div>
+              <div class="cd-label">Sec</div>
+            </div>
+          </div>
+
+        
+
+        <!-- Footer Tagline -->
+        <div class="footer-note" id="footerNote">Yasar &amp; Zillaa · 14.11.2026</div>
+      </div>
+    </div>
+
+    <!-- Floating Sound / Mute Button -->
+    <button id="mute-btn" class="mute-btn hidden" aria-label="Toggle sound" type="button">
+      <svg
+        id="icon-unmuted"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+      </svg>
+      <svg
+        id="icon-muted"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        style="display: none"
+      >
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <line x1="23" y1="9" x2="17" y2="15"></line>
+        <line x1="17" y1="9" x2="23" y2="15"></line>
+      </svg>
+    </button>
+
+    <!-- Core Scripts -->
+    <script src="assets/js/lottie.min.js"></script>
+    <script src="assets/js/wedding-config.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
