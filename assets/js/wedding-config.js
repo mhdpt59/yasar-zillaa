@@ -51,7 +51,8 @@ const WEDDING_CONFIG = {
 
   // Audio / Music
   music: {
-    src: "assets/music/wedding-song.mp3"
+    src: "assets/music/wedding-song.mp4",
+    fallbackSrc: "assets/music/wedding-song.mp3"
   },
 
   // Sign-off

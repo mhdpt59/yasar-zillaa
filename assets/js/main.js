@@ -43,10 +43,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Start background romantic music on user gesture
     if (bgMusic) {
-      bgMusic.volume = 0.7;
-      bgMusic.play().catch((err) => {
-        console.log("Audio autoplay prevented:", err);
-      });
+      bgMusic.muted = false;
+      bgMusic.volume = 0.75;
+      const playPromise = bgMusic.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            if (iconUnmuted) iconUnmuted.style.display = "block";
+            if (iconMuted) iconMuted.style.display = "none";
+          })
+          .catch((err) => {
+            console.warn("Audio autoplay blocked by browser policy:", err);
+            if (iconUnmuted) iconUnmuted.style.display = "none";
+            if (iconMuted) iconMuted.style.display = "block";
+          });
+      }
     }
 
     // Show floating audio toggle button
@@ -81,17 +92,35 @@ document.addEventListener("DOMContentLoaded", () => {
   if (lottieContainer) lottieContainer.addEventListener("click", handleOpenEnvelope);
   if (envelopePrompt) envelopePrompt.addEventListener("click", handleOpenEnvelope);
 
-  // 4. Mute / Unmute Toggle
+  // 4. Play / Pause & Mute Controls
   if (muteBtn && bgMusic) {
     muteBtn.addEventListener("click", () => {
-      if (bgMusic.muted) {
+      if (bgMusic.paused) {
         bgMusic.muted = false;
-        iconUnmuted.style.display = "block";
-        iconMuted.style.display = "none";
+        bgMusic.play()
+          .then(() => {
+            if (iconUnmuted) iconUnmuted.style.display = "block";
+            if (iconMuted) iconMuted.style.display = "none";
+          })
+          .catch((err) => console.error("Play error:", err));
+      } else if (bgMusic.muted) {
+        bgMusic.muted = false;
+        if (iconUnmuted) iconUnmuted.style.display = "block";
+        if (iconMuted) iconMuted.style.display = "none";
       } else {
-        bgMusic.muted = true;
-        iconUnmuted.style.display = "none";
-        iconMuted.style.display = "block";
+        bgMusic.pause();
+        if (iconUnmuted) iconUnmuted.style.display = "none";
+        if (iconMuted) iconMuted.style.display = "block";
+      }
+    });
+
+    // Fallback if source errors
+    bgMusic.addEventListener("error", (e) => {
+      console.warn("Primary audio encountered an error, falling back to mp3:", e);
+      if (bgMusic.src && bgMusic.src.includes(".mp4")) {
+        bgMusic.src = "assets/music/wedding-song.mp3";
+        bgMusic.load();
+        if (isOpened) bgMusic.play().catch(() => {});
       }
     });
   }

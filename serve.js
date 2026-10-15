@@ -17,6 +17,8 @@ const mimeTypes = {
   '.webp': 'image/webp',
   '.svg': 'image/svg+xml',
   '.mp3': 'audio/mpeg',
+  '.mp4': 'audio/mp4',
+  '.m4a': 'audio/mp4',
   '.ogg': 'audio/ogg',
   '.ico': 'image/x-icon'
 };
